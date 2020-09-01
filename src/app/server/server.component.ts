@@ -9,7 +9,8 @@ export class ServerComponent implements OnInit {
   allowNewServer = false;
   noServerCreater = 'no service work';
   data = "";
-  server=""
+  server="";
+  userEmail="";
 
   constructor() {
     setTimeout(()=>{

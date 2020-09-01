@@ -1,19 +1,28 @@
 <label>serverName</label>
-<input 
-type="text" 
-class="form-controll"
-(input)="onUpdate($event)">
+<div>
+    <input type="text" class="form-control" (input)="onUpdate($event)">
+</div>
+<div>
 
-<input 
-type="text" 
-class="form-controll"
-[(ngModel)]="server">
+    <input type="text" class="form-control" [(ngModel)]="server">
+</div>
 
-<button 
-class="btn btn-primary"
-[disabled]="!allowNewServer"
-(click)="onServerCreater()">clickHere</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreater()">clickHere</button>
 
 <p>{{noServerCreater}}</p>
 <!-- <p>{{data}}</p> -->
 <p>{{server}}</p>
+
+<div>
+
+    <label>Email</label>
+    <div>
+        <input type="text" class="form-control" [(ngModel)]="userEmail">
+        {{userEmail}}
+        
+    </div>
+    <button class="btn btn-primary"
+    [disabled]="userEmail === ''"
+    (click)="userEmail=''">Reset User</button>
+
+</div>
