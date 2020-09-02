@@ -11,6 +11,7 @@ export class ServerComponent implements OnInit {
   data = "";
   server="";
   userEmail="";
+  sentence = false;
 
   constructor() {
     setTimeout(()=>{
@@ -21,6 +22,7 @@ export class ServerComponent implements OnInit {
   ngOnInit(): void {
   }
   onServerCreater(){
+    this .sentence = true;
     this.noServerCreater = 'server creater is working'+" " +this.data ;
 
   }

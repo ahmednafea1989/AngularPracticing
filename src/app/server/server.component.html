@@ -9,9 +9,14 @@
 
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreater()">clickHere</button>
 
-<p>{{noServerCreater}}</p>
+<!-- <p>{{noServerCreater}}</p> -->
 <!-- <p>{{data}}</p> -->
 <p>{{server}}</p>
+<p *ngIf="sentence ; else noServer">Hi Ahmed this is Direftive</p>
+
+<ng-template #noServer>
+    <p>no server work</p>
+</ng-template>
 
 <div>
 
