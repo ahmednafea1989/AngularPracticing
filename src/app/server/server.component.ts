@@ -12,11 +12,17 @@ export class ServerComponent implements OnInit {
   server="";
   userEmail="";
   sentence = false;
+  serverId:number = 10;
+  serverStatus: string = 'offline' ; 
+  showSecret = true ;
+  log = [];
 
   constructor() {
     setTimeout(()=>{
       this.allowNewServer = true;
     },2000)
+
+    this.serverStatus = Math.random() >0.5 ? 'online' : 'offline';
    }
 
   ngOnInit(): void {
@@ -33,7 +39,19 @@ export class ServerComponent implements OnInit {
 
 
   }
+  getColor(){
+    return this.serverStatus === 'online' ? 'green ' : 'red';
+  }
+
+ getServerStatus(){
+   return this.serverStatus;
+ }
 
 
+ onShowSecret(){
+   this.showSecret = !this.showSecret;
+  //  this.log.push(this.log.length + 1);
+  this.log.push(new Date());
+ }
 
 }

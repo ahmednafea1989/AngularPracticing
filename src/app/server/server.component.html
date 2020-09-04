@@ -31,3 +31,22 @@
     (click)="userEmail=''">Reset User</button>
 
 </div>
+
+<div>
+    <p [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">{{'server'}} With ID {{serverId}} is {{getServerStatus()}}
+ </p>
+</div>
+
+<div>
+    <button class="btn btn-primary"
+    (click)="onShowSecret()">Display Details</button>
+
+    <p *ngIf="showSecret">Ahmed you the best</p>
+    <!-- <div *ngFor="let logItem of log"
+    [ngStyle]="{backgroundColor: logItem >= 5 ? 'green' : 'red' }"
+    [ngClass]="{'white-text': logItem >= 5}">{{logItem}}</div> -->
+    <div *ngFor="let logItem of log; let i = index"
+    [ngStyle]="{backgroundColor: i >= 5 ? 'green' : 'red' }"
+    [ngClass]="{'white-text': i >= 5}">{{logItem}}</div>
+</div>
